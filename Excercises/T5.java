@@ -7,7 +7,8 @@ public class T5 {
         // ej1();
         // ej2();
         // ej3();
-        ej4();
+        // ej4();
+        ej5();
     }
 
     public static void ej1()
@@ -94,8 +95,9 @@ public class T5 {
         Scanner scan = new Scanner(System.in);
         double final_price;
         final double base_price = 375.99;
-        System.out.println("Which size of screen do you want (38 or 43):");
+        System.out.print("Which size of screen do you want (38 or 43):");
         int screen_size = scan.nextInt();
+        scan.nextLine(); // this is done in order to consume the /n typed in the line where we type the number
         if(screen_size == 38)
         {
             final_price = base_price + 75.99;
@@ -103,8 +105,24 @@ public class T5 {
             final_price = base_price + 99.99;
         }
 
-        System.out.println("Do you want to add Antivirus? (Y/N):");
+        System.out.print("Do you want to add Antivirus? (Y/N):");
         String virus_answer = scan.nextLine();
+        if(virus_answer.equals("Y"))
+        {
+            final_price = final_price + 65.99;
+        }
+
+
+        System.out.print("Do you want to add Printer? (Y/N):");
+        String printer_answer = scan.nextLine();
+        if(printer_answer.equals("Y"))
+        {
+            final_price = final_price + 125.00;
+        }
+
+        scan.close();
+
+        System.out.println("The final price of your PC is: " + final_price);
         
     }
 
