@@ -126,6 +126,11 @@ public class T5 {
         
     }
 
+    public static void ej6()
+    {
+        
+    }
+
     public static void ej_slides()
     {
         double price, tax;
