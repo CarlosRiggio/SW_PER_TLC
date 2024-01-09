@@ -1,46 +1,43 @@
-
+import java.util.Scanner;
 
 public class CircularShape {
-    private double radio;
 
-    public CircularShape(double radio) {
-        this.radio = radio;
+    private double radius;
+
+    CircularShape(double inradius){
+        radius = inradius;
     }
 
-    public void setRadio(double radio) {
-        this.radio = radio;
+    public void setRadius(double inradius){
+        radius = inradius;
     }
 
-    public double getRadio() {
-        return radio;
+    public double getRadius(){
+        return radius;
     }
 
-    public double calculateArea() {
-        return Math.PI * Math.pow(radio, 2);
+    public double calculateArea(){
+        return 3.14*radius*radius;
+    }
+    
+    public double calculateCircunference(){
+        return 2*3.14*radius;
     }
 
-    public double calculateCircumference() {
-        return 2 * Math.PI * radio;
-    }
-
-    public double calcularDiametro() {
-        return 2 * radio;
+    public double calculateDiameter(){
+        return 2* radius;
     }
 
     public static void main(String[] args) {
-        // Crear una instancia de CircularShape con un radio de 5.0
-        CircularShape circulo = new CircularShape(5.0);
-
-        // Mostrar el radio
-        System.out.println("Radio del círculo: " + circulo.getRadio());
-
-        // Calcular y mostrar el área
-        System.out.println("Área del círculo: " + circulo.calculateArea());
-
-        // Calcular y mostrar la circunferencia
-        System.out.println("Circunferencia del círculo: " + circulo.calculateCircumference());
-
-        // Calcular y mostrar el diámetro
-        System.out.println("Diámetro del círculo: " + circulo.calcularDiametro());
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introduce the raidus: " );
+        double radius = scan.nextDouble();
+        CircularShape cs = new CircularShape(radius);
+        System.out.println("El radio es: "+ cs.getRadius());
+        System.out.println("La circnferencia es: " + cs.calculateCircunference());
+        System.out.println("El diametro es: " + cs.calculateDiameter());
+        scan.close();
     }
+
+
 }
